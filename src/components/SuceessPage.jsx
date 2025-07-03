@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/styles.css'; // Import your CSS file
 
-export default function Success({ email }) {
+export default function Success({ email, onDismiss }) {
   return (
     <div className="sign-up-form">
       <img src="/images/icon-success.svg" alt="Success Icon" />
@@ -15,7 +15,7 @@ export default function Success({ email }) {
 
       <button
         className="dismiss-btn"
-        onClick={() => (window.location.href = 'index.html')}
+        onClick={onDismiss}
       >
         Dismiss message
       </button>
