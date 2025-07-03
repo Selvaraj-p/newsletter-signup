@@ -1,88 +1,19 @@
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
-}
 
-.sign-up-form {
-  background-color: white;
-  padding: 2rem;
-  max-width: 400px;
-  margin: 50px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-heading {
+.thanks-for-sub {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
-.form-description {
+.success-text {
   font-size: 0.9rem;
-  color: #555;
+  color: #444;
 }
 
-.feature-list {
-  margin: 1rem 0;
-  padding-left: 1.2rem;
-}
-
-.feature-list li {
-  margin-bottom: 0.5rem;
-}
-
-.input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  margin-bottom: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.input:focus {
-  outline: none;
-  border-color: #1e90ff;
-}
-
-.input.error {
-  border-color: rgb(255, 99, 71);
-  background-color: rgba(255, 99, 71, 0.1);
-  color: rgb(255, 99, 71);
-}
-
-.error-message {
-  display: block;
-  color: rgb(255, 99, 71);
-  font-size: 0.85rem;
-  margin-bottom: 0.8rem;
-}
-
-.sub-btn {
-  width: 100%;
-  background-color: #1e90ff;
-  color: white;
+.dismiss-btn {
+  background-color: #ccc;
   padding: 10px;
   border: none;
-  font-weight: bold;
   border-radius: 5px;
+  margin-top: 1rem;
   cursor: pointer;
-}
-
-.sub-btn:hover {
-  background-color: #187bcd;
-}
-
-.footer {
-  margin-top: 1.5rem;
-  text-align: center;
-  font-size: 0.75rem;
-  color: #999;
-}
-
-.footer a {
-  color: inherit;
-  text-decoration: underline;
 }
