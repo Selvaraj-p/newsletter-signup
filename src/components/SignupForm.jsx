@@ -6,7 +6,7 @@ export default function SignupForm({ email, setEmail, handleSubmit }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const emailRegex = /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     if (emailRegex.test(email)) {
       setError(false);

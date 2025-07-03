@@ -17,3 +17,16 @@
   margin-top: 1rem;
   cursor: pointer;
 }
+em {
+  color: rgb(255, 99, 71);
+  font-size: 0.875rem;
+  font-style: normal;
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+#email.error {
+  border-color: rgb(255, 99, 71);
+  background-color: rgba(255, 99, 71, 0.6);
+  color: rgb(255, 99, 71);
+}
