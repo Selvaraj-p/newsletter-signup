@@ -2,23 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Success</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="main">
   <div class="sign-up-form">
     <img src="/images/icon-success.svg" alt="Success Icon" />
+    
     <h1 class="thanks-for-sub">Thanks for Subscribing!</h1>
-    <p class="success-text"></p>
-    <button class="dismiss-btn" onclick="window.location.href='index.html'">Dismiss message</button>
+
+    <p class="success-text">
+      <!-- Email will be injected here by JavaScript -->
+    </p>
+
+    <button class="dismiss-btn" onclick="window.location.href='index.html'">
+      Dismiss message
+    </button>
   </div>
+
+  <footer class="footer">
+    © 2025 <a href="https://crio.do">Crio</a>
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const email = localStorage.getItem("submittedEmail");
-      const output = document.querySelector(".success-text");
-      output.textContent = `A confirmation email has been sent to ${email}`;
+      const successText = document.querySelector(".success-text");
+
+      if (email) {
+        successText.textContent = `A confirmation email has been sent to ${email}. Please open it and confirm your subscription.`;
+      } else {
+        successText.textContent = `A confirmation email has been sent.`;
+      }
     });
   </script>
 </body>

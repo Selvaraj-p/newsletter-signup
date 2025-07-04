@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import '../styles/styles.css';
 
-export default function SignupForm({ email, setEmail, handleSubmit }) {
+import React, { useState } from 'react';
+import '../styles/styles.css'; // Ensure this file contains all required class styles
+
+function SignupForm() {
+  const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const emailRegex = /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-    if (emailRegex.test(email)) {
+    if (regex.test(email.trim())) {
       setError(false);
-      handleSubmit();
+      localStorage.setItem('submittedEmail', email.trim());
+      window.location.href = 'success.html';
     } else {
       setError(true);
     }
@@ -18,33 +21,33 @@ export default function SignupForm({ email, setEmail, handleSubmit }) {
 
   return (
     <div className="sign-up-form">
-      <h1 className="form-heading">Stay updated!</h1>
-      <p className="form-description">
-        Join 60,000+ product managers receiving monthly updates on:
-      </p>
-      <ul className="feature-list">
+      <h1>Stay updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <ul>
         <li>Product discovery and building what matters</li>
         <li>Measuring to ensure updates are a success</li>
         <li>And much more!</li>
       </ul>
-      <form onSubmit={onSubmit}>
+
+      <form onSubmit={handleSubmit} noValidate>
         <label htmlFor="email">Email address</label>
         <input
-          id="email"
           type="email"
+          id="email"
+          className={error ? 'error' : ''}
+          placeholder="email@company.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={error ? 'input error' : 'input'}
-          placeholder="email@company.com"
         />
-        {error && <em className="error-message">Valid email required.</em>}
-        <button type="submit" className="sub-btn" onClick={() => window.location.href = 'success.html'}>
-          Subscribe to monthly newsletter
-        </button>
+        {error && <em>Valid email required.</em>}
+        <button type="submit" className="sub-btn">Subscribe to monthly newsletter</button>
       </form>
+
       <footer className="footer">
-Challenge by <a href="https://crio.do">Crio</a>.Coded by <a href="https://www.github.com/selvaraj-p">selvaraj-p</a>
+        © 2025 <a href="https://crio.do">Crio</a>
       </footer>
     </div>
   );
 }
+
+export default SignupForm;
