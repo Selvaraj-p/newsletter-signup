@@ -38,7 +38,7 @@ export default function SignupForm({ email, setEmail, handleSubmit }) {
           placeholder="email@company.com"
         />
         {error && <em className="error-message">Valid email required.</em>}
-        <button type="submit" className="sub-btn">
+        <button type="submit" className="sub-btn" onClick={() => window.location.href = 'success.html'}>
           Subscribe to monthly newsletter
         </button>
       </form>
