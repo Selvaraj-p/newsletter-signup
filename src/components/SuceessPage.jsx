@@ -15,7 +15,7 @@ export default function Success({ email, onDismiss }) {
 
       <button
         className="dismiss-btn"
-        onClick={onDismiss}
+        onClick={() => (window.location.href = 'success.html')}
       >
         Dismiss message
       </button>
